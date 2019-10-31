@@ -4,13 +4,9 @@
 
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="音乐推荐：缘分一道桥, 千机阁">
-    <meta name="description" content="音乐推荐缘分一道桥难得佳作，铿锵有力。此曲选曲和意境描绘都非常有特色。
-开篇用古诗描绘塞外雄浑，历史壮丽；
-而后就是乱世战争命如草芥，生死无常。
-撇开《长城》的垃圾故事不说，战争描绘和长城风光倒是淋漓尽致，再配合这首歌，
-算是锦上添花了。
-">
+    <meta name="keywords" content="Retrofit的基本使用, 千机阁">
+    <meta name="description" content="1，导入依赖implementation &amp;#39;com.jakewharton.retrofit:retrofit2-kotlin-coroutines-adapter:0.9.2&amp;#39;
+implementation &amp;#39;co">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -18,7 +14,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>音乐推荐：缘分一道桥 | 千机阁</title>
+    <title>Retrofit的基本使用 | 千机阁</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -284,13 +280,13 @@
 
 
 
-<div class="bg-cover post-cover" style="background-image: url('/medias/featureimages/15.jpg')">
+<div class="bg-cover post-cover" style="background-image: url('/medias/featureimages/12.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        音乐推荐：缘分一道桥
+                        Retrofit的基本使用
                     </div>
                 </div>
             </div>
@@ -382,8 +378,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/音乐/" target="_blank">
-                                <span class="chip bg-color">音乐</span>
+                            <a href="/tags/java/" target="_blank">
+                                <span class="chip bg-color">java</span>
                             </a>
                         
                     </div>
@@ -397,21 +393,21 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2019-06-25
+                    2019-10-31
                 </div>
 
                 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        1.5k
+                        135
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        5 分
+                        1 分
                     </div>
                     
                 
@@ -427,49 +423,20 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="音乐推荐"><a href="#音乐推荐" class="headerlink" title="音乐推荐"></a>音乐推荐</h2><h3 id="缘分一道桥"><a href="#缘分一道桥" class="headerlink" title="缘分一道桥"></a>缘分一道桥</h3><pre><code>难得佳作，铿锵有力。此曲选曲和意境描绘都非常有特色。
-开篇用古诗描绘塞外雄浑，历史壮丽；
-而后就是乱世战争命如草芥，生死无常。
-撇开《长城》的垃圾故事不说，战争描绘和长城风光倒是淋漓尽致，再配合这首歌，
-算是锦上添花了。
+                <h2 id="1，导入依赖"><a href="#1，导入依赖" class="headerlink" title="1，导入依赖"></a>1，导入依赖</h2><pre><code>implementation &#39;com.jakewharton.retrofit:retrofit2-kotlin-coroutines-adapter:0.9.2&#39;
+implementation &#39;com.squareup.retrofit2:adapter-rxjava2:2.4.0&#39;
+implementation &#39;com.squareup.retrofit2:converter-scalars:2.4.0&#39;
+implementation &#39;com.squareup.retrofit2:converter-gson:2.4.0&#39;</code></pre><h2 id="2，初始化"><a href="#2，初始化" class="headerlink" title="2，初始化"></a>2，初始化</h2><pre><code> retrofit=Retrofit.Builder()
+        .baseUrl(&quot;http://api.juheapi.com/&quot;)
+        .addConverterFactory(GsonConverterFactory.create())
+        .build()
+    getRequest= retrofit.create(GetRequest::class.java)</code></pre><h2 id="3，请求"><a href="#3，请求" class="headerlink" title="3，请求"></a>3，请求</h2><pre><code>@Headers(&quot;Content-type:application/json;charset=UTF-8&quot;)           //11111111
+@POST(japi/toh)
+suspend fun getHistory( @QueryMap map: Map&lt;String, String&gt;): BaseBean&lt;List&lt;HistoryBean&gt;&gt;</code></pre><h2 id="4，调用"><a href="#4，调用" class="headerlink" title="4，调用"></a>4，调用</h2><pre><code> BaseApplication.getRequest.getHistory(map)
+            }.apply {
+                Log.d(&quot;zzzz&quot;,&quot;ss:&quot;+this.error_code+&quot; &quot;+this.reason+&quot; &quot;+this.result)
 
-歌词：
-    缘分一道桥 (Cover 王力宏&amp;谭维维) - 伦桑&amp;螭羽毛</code></pre><p>词：方文山 曲：王力宏</p>
-<p>秦时明月汉时关万里长征人未还</p>
-<p>但使龙城飞将在不教胡马度阴山</p>
-<p>狼烟千里乱葬岗乱世孤魂无人访</p>
-<p>无言苍天笔墨寒笔刀春秋以血偿</p>
-<p>谈爱恨不能潦草战鼓敲啊敲</p>
-<p>用信任立下誓言我来熬</p>
-<p>这缘份像一道桥旌旗飘啊飘</p>
-<p>你想走就请立马抽刀</p>
-<p>爱一笔勾销</p>
-<p>谈爱恨不能潦草红尘烧啊烧</p>
-<p>以生死无愧证明谁重要</p>
-<p>这缘份像一道桥故事瞧一瞧</p>
-<p>走天涯你我卸下战袍</p>
-<p>梦回长城谣</p>
-<p>秦时明月汉时关万里长征人未还</p>
-<p>但使龙城飞将在不教胡马度阴山</p>
-<p>血肉筑城万箭穿盔甲染血映月光</p>
-<p>远方胡笳催断肠狼嚎骤起震边关</p>
-<p>谈爱恨不能潦草战鼓敲啊敲</p>
-<p>用信任立下誓言我来熬</p>
-<p>这缘份像一道桥旌旗飘啊飘</p>
-<p>你想走就请立马抽刀</p>
-<p>爱一笔勾销</p>
-<p>谈爱恨不能潦草红尘烧啊烧</p>
-<p>以生死无愧证明谁重要</p>
-<p>这缘份像一道桥故事瞧一瞧</p>
-<p>走天涯你我卸下战袍</p>
-<p>梦回长城谣</p>
-<p>这缘份像一道桥故事瞧一瞧</p>
-<p>走天涯你我卸下战袍</p>
-<p>梦回长城谣 </p>
-<pre><code>背景：
-张艺谋电影钦点王力宏献唱片尾曲《缘份一道桥》</code></pre><p>　　搭档谭维维合唱将磅礡气势展现无遗<br>　　张艺谋执导的史诗级魔幻电影《长城》即将于2017年贺岁档期上映，<br>    电影集结了好莱坞巨星马特·达蒙和威廉·达福以及中港台所有一线演员，<br>    包括刘德华、张涵予、鹿晗、彭于晏、林更新、郑恺、黄轩、陈学冬、王俊凯等坚强阵容，<br>    还未上映就引发高度关注！于是片尾曲的演唱者也成为众人关心的焦点，<br>    最后张艺谋钦点“亚洲天王”王力宏，为该部电影的片尾曲献声，<br>    并邀请谭维维一同合唱，以独特的中国风搭配上史诗历史奇幻的剧情，<br>    男女合唱营造出气势磅礡的片尾曲《缘份一道桥》！<br>　　电影《长城》斥资8亿人民币所打造而成，堪称是张艺谋从影以来规模最浩大的巨片，更是导演的首部英语电影和3D电影，有了豪华的演员阵容，电影配乐和片尾曲绝对也占了举足轻重的分量，张艺谋导演直接找了心中最佳人选王力宏来为电影谱曲，请他为电影片尾曲操刀！说到两人缘份可追朔于2007年的威尼斯影展，当时李安导演带着电影《色戒》演员出席影展，在李安导演的引荐下，三人一同共进早餐，也因而搭上友谊的桥梁；后来张艺谋接任2008年北京奥运会开闭幕式总导演一职，筹备表演内容的过程中，邀请王力宏一起尽份心力为奥运歌曲创作，每一周奥运团队都会进行开会比稿讨论，提出想要的歌曲方向，张艺谋说：“王力宏是投稿最多次的，让我印象非常深刻。”王力宏也说：“那时每周都写一首歌，总导演开会讨论完会再提出新的方向，我就再修改再写，虽然最后并没采用歌曲，但还是觉得是很棒的经验！”<br>　　也因为王力宏的认真，让张艺谋导演打定主意未来一定要再合作，所以筹备拍摄即将上映的史诗级魔幻电影《长城》时，有一场规模庞大的戏，千军万马在战场上奔腾砍杀，张导立刻找了王力宏来为这场戏谱曲，希望是由一首唐诗来揭开整首歌的序曲，然后由剧中演员演唱；王力宏选用了盛唐著名诗人，有“诗家天子”封号的王昌龄作品《出塞》，引用诗词“秦时明月汉时关 万里长征人未还 但使龙城飞将在 不教胡马度阴山”做为歌曲的开端；后来搭配上电影场景画面后，电影公司和导演团队都非常喜欢，进而希望成为该部电影的片尾曲，由王力宏亲自演唱，就这样诞生了《缘份一道桥》这首气势磅礡的歌曲！王力宏说：“创作这首歌真得很有挑战性，横跨千年时空又是古装大戏，如何把古调转成流行曲着实不易！”<br>　　而王力宏出道多年也首度携手与善于着墨中国风歌词的方文山合作，两人为此也聊了许多，透过方文山的笔下将原本场面雄阔的边塞诗《出塞》发挥得更淋漓尽致；为了增加歌曲的戏剧张力，王力宏选择以男女对唱方式来诠释，找了相识13年的好友“摇滚歌者”谭维维来合唱，王力宏说：“这几年透过谭维维在舞台上的表演留下很深刻的印象，特别是2016央视春晚的表演，她引人入胜的唱法也俘虏了无数观众的心；有了她的歌声也才更增添《缘份一道桥》这首歌的磅礡感，英气非凡！”</p>
-<p>MV 链接: <a href="http://v.yinyuetai.com/video/h5/2724400" target="_blank" rel="noopener">点击此处</a></p>
-
+            }</code></pre>
             </div>
             <hr>
 
@@ -609,7 +576,7 @@
                     </span>
                     <a href="www.cndsx.xyz" class="b-link-green">千机阁</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                    <a href="/2019/06/25/音乐——缘分一道桥/" class="b-link-green">音乐推荐：缘分一道桥</a>
+                    <a href="/2019/10/31/Retrifut的基本使用/" class="b-link-green">Retrofit的基本使用</a>
                 </p>
             </div>
         </div>
@@ -891,27 +858,25 @@
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2019/06/26/java的基本数据类型/">
+                <a href="/2019/10/31/Retrifut的基本使用/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="java的基本数据类型">
+                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="Retrofit的基本使用">
                         
-                        <span class="card-title">java的基本数据类型</span>
+                        <span class="card-title">Retrofit的基本使用</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary">Java基本数据类型有八种四种整数类型byte:8位，最小数据单位。
-short:16位，很少用。
-int:32位，最常用
-long:64位，次常用    整数字面默认为int型，所以long后面加上L或者l
-两种浮点类型float:32位</div>
+                    <div class="summary">1，导入依赖implementation &#39;com.jakewharton.retrofit:retrofit2-kotlin-coroutines-adapter:0.9.2&#39;
+implementation &#39;co</div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-06-26
-                        </span>
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-10-31
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-user fa-fw"></i>
@@ -920,6 +885,7 @@ long:64位，次常用    整数字面默认为int型，所以long后面加上L�
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -938,21 +904,22 @@ long:64位，次常用    整数字面默认为int型，所以long后面加上L�
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2019/06/21/金庸和古龙/">
+                <a href="/2019/08/03/电影——哪吒/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="江湖之大侠和浪子">
+                        <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="电影推荐：哪吒">
                         
-                        <span class="card-title">江湖之大侠和浪子</span>
+                        <span class="card-title">电影推荐：哪吒</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary">人间太阳剑，天涯明月刀金庸和古龙的差别，其实就是三个词而已。金庸写人间，古龙写天涯金庸问的是：“我是谁？”古龙问的是“天涯远不远？”前一问，是充裕、富足后的哲思，问的是人生的意义；后一问，是孤独、漂泊中的追寻，问的是人生的归宿。
-金庸的侠是</div>
+                    <div class="summary">##哪吒之魔童降世 推荐指数 10 分
+###简介休说苍天不由人，我命由我不由天，爱可浇灌一切。
+### 内容介绍天地有灵，孕育混元，作恶多端。元始天尊将混元珠提炼成灵珠和魔丸，灵珠投胎为人，助周伐纣时可堪大用，魔丸元神坚不可摧，只得降下天</div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-06-21
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-08-03
                             </span>
                         <span class="publish-author">
                             
@@ -965,8 +932,8 @@ long:64位，次常用    整数字面默认为int型，所以long后面加上L�
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/散文/" target="_blank">
-                        <span class="chip bg-color">散文</span>
+                    <a href="/tags/电影/" target="_blank">
+                        <span class="chip bg-color">电影</span>
                     </a>
                     
                 </div>

@@ -4,12 +4,9 @@
 
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="java的基本数据类型, 千机阁">
-    <meta name="description" content="Java基本数据类型有八种四种整数类型byte:8位，最小数据单位。
-short:16位，很少用。
-int:32位，最常用
-long:64位，次常用    整数字面默认为int型，所以long后面加上L或者l
-两种浮点类型float:32位">
+    <meta name="keywords" content="GreenDao的基本使用, 千机阁">
+    <meta name="description" content="###GreenDAO 是一个将对象映射到 SQLite 数据库中的轻量且快速的 ORM 解决方案。
+#1，添加依赖        在根目录中build.gradle添加         classpath ‘com.android.too">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -17,7 +14,7 @@ long:64位，次常用    整数字面默认为int型，所以long后面加上L�
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>java的基本数据类型 | 千机阁</title>
+    <title>GreenDao的基本使用 | 千机阁</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -283,13 +280,13 @@ long:64位，次常用    整数字面默认为int型，所以long后面加上L�
 
 
 
-<div class="bg-cover post-cover" style="background-image: url('/medias/featureimages/10.jpg')">
+<div class="bg-cover post-cover" style="background-image: url('/medias/featureimages/16.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        java的基本数据类型
+                        GreenDao的基本使用
                     </div>
                 </div>
             </div>
@@ -381,8 +378,8 @@ long:64位，次常用    整数字面默认为int型，所以long后面加上L�
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/java/" target="_blank">
-                                <span class="chip bg-color">java</span>
+                            <a href="/tags/android/" target="_blank">
+                                <span class="chip bg-color">android</span>
                             </a>
                         
                     </div>
@@ -396,21 +393,21 @@ long:64位，次常用    整数字面默认为int型，所以long后面加上L�
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2019-06-26
+                    2020-03-25
                 </div>
 
                 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        237
+                        1.1k
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        1 分
+                        5 分
                     </div>
                     
                 
@@ -426,19 +423,235 @@ long:64位，次常用    整数字面默认为int型，所以long后面加上L�
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="Java基本数据类型有八种"><a href="#Java基本数据类型有八种" class="headerlink" title="Java基本数据类型有八种"></a>Java基本数据类型有八种</h2><h3 id="四种整数类型"><a href="#四种整数类型" class="headerlink" title="四种整数类型"></a>四种整数类型</h3><pre><code>byte:8位，最小数据单位。
-short:16位，很少用。
-int:32位，最常用
-long:64位，次常用</code></pre><pre><code class="bash">    整数字面默认为int型，所以long后面加上L或者l</code></pre>
-<h3 id="两种浮点类型"><a href="#两种浮点类型" class="headerlink" title="两种浮点类型"></a>两种浮点类型</h3><pre><code>float:32位，后缀F或者f
-double：64位，最常用，后缀D或者d</code></pre><pre><code class="bash">    浮点类型默认为double，所以定义在float后加上F或者f.
-    浮点数是不精确的，容易造成精度丢失</code></pre>
-<h3 id="一种布尔类型"><a href="#一种布尔类型" class="headerlink" title="一种布尔类型"></a>一种布尔类型</h3><pre><code>true 真  和 false 假。</code></pre><h3 id="一种字符类型"><a href="#一种字符类型" class="headerlink" title="一种字符类型"></a>一种字符类型</h3><pre><code>char:16位，是整数类型，可以是中文字符
- 转义字符：\n  换行  \r  回车  \t Tab 字符  \&quot; 双引号  \\ 表示一个\    两字符 char 中间用“+”连接、</code></pre><h3 id="类型转换"><a href="#类型转换" class="headerlink" title="类型转换"></a>类型转换</h3><pre><code>自动转换：
-char--&gt; byte--&gt;short--&gt;int--&gt;long--&gt;float--&gt;double
-强制转换：
-①会损失精度，产生误差，小数点以后的数字全部舍弃。
-②容易超过取值范围。</code></pre>
+                <p>###GreenDAO 是一个将对象映射到 SQLite 数据库中的轻量且快速的 ORM 解决方案。</p>
+<p>#1，添加依赖<br>        在根目录中build.gradle添加<br>         classpath ‘com.android.tools.build:gradle:3.2.1’<br>        // 添加插件<br>        classpath ‘org.greenrobot:greendao-gradle-plugin:3.2.2’ </p>
+<pre><code>   在app的build.gradle添加
+
+            apply plugin: &#39;org.greenrobot.greendao&#39; // 应用插件
+            implementation &#39;org.greenrobot:greendao:3.2.2&#39; // 添加依赖
+
+            greendao {
+// 指定数据库schema版本号，迁移等操作会用到
+schemaVersion 1
+// 设置生成数据库文件的目录，默认是在build中，可以将生成的文件放到我们的java目录中
+targetGenDir &#39;src/main/java&#39;
+// 设置生成的数据库相关文件的包名，默认为entity所在的包名
+daoPackage &#39;com.shufeng.greendao.gen&#39;</code></pre><p>}</p>
+<p>#2，编写实体类<br>        @Entity<br>public class Meizi<br>{
+    @Id(autoincrement = true)<br>    private Long _id;<br>    private String source;<br>    @NotNull<br>    private String url;<br>}</p>
+<p>#3，编写DaoManager<br>      public class DaoManager<br>{
+    private static final String TAG = DaoManager.class.getSimpleName();<br>    private static final String DB_NAME = “greendaotest”;</p>
+<pre><code>private Context context;
+
+//多线程中要被共享的使用volatile关键字修饰
+private volatile static DaoManager manager = new DaoManager();
+private static DaoMaster sDaoMaster;
+private static DaoMaster.DevOpenHelper sHelper;
+private static DaoSession sDaoSession;
+
+/**
+ * 单例模式获得操作数据库对象
+ *
+ * @return
+ */
+public static DaoManager getInstance()
+{
+    return manager;
+}
+
+private DaoManager()
+{
+    setDebug();
+}
+
+public void init(Context context)
+{
+    this.context = context;
+}
+
+/**
+ * 判断是否有存在数据库，如果没有则创建
+ *
+ * @return
+ */
+public DaoMaster getDaoMaster()
+{
+    if (sDaoMaster == null)
+    {
+        DaoMaster.DevOpenHelper helper = new DaoMaster.DevOpenHelper(context, DB_NAME, null);
+        sDaoMaster = new DaoMaster(helper.getWritableDatabase());
+    }
+    return sDaoMaster;
+}
+
+/**
+ * 完成对数据库的添加、删除、修改、查询操作，仅仅是一个接口
+ *
+ * @return
+ */
+public DaoSession getDaoSession()
+{
+    if (sDaoSession == null)
+    {
+        if (sDaoMaster == null)
+        {
+            sDaoMaster = getDaoMaster();
+        }
+        sDaoSession = sDaoMaster.newSession();
+    }
+    return sDaoSession;
+}
+
+/**
+ * 打开输出日志，默认关闭
+ */
+public void setDebug()
+{
+    if (BuildConfig.DEBUG)
+    {
+        QueryBuilder.LOG_SQL = true;
+        QueryBuilder.LOG_VALUES = true;
+    }
+}
+
+/**
+ * 关闭所有的操作，数据库开启后，使用完毕要关闭
+ */
+public void closeConnection()
+{
+    closeHelper();
+    closeDaoSession();
+}
+
+public void closeHelper()
+{
+    if (sHelper != null)
+    {
+        sHelper.close();
+        sHelper = null;
+    }
+}
+
+public void closeDaoSession()
+{
+    if (sDaoSession != null)
+    {
+        sDaoSession.clear();
+        sDaoSession = null;
+    }
+}</code></pre><p>}</p>
+<p>#4,编写Application，并初始化 DaoManager<br>  public class MyApplication extends Application<br>{
+    @Override<br>    public void onCreate()<br>    {<br>        super.onCreate();<br>        initGreenDao();<br>    }</p>
+<pre><code>private void initGreenDao()
+{
+    DaoManager mManager = DaoManager.getInstance();
+    mManager.init(this);
+}</code></pre><p>}</p>
+<p>#5,编写工具类</p>
+<p>public class MeiziDaoUtils<br>{
+    private static final String TAG = MeiziDaoUtils.class.getSimpleName();<br>    private DaoManager mManager;</p>
+<pre><code>public MeiziDaoUtils(Context context){
+    mManager = DaoManager.getInstance();
+    mManager.init(context);
+}
+
+/**
+ * 完成meizi记录的插入，如果表未创建，先创建Meizi表
+ * @param meizi
+ * @return
+ */
+public boolean insertMeizi(Meizi meizi){
+    boolean flag = false;
+    flag = mManager.getDaoSession().getMeiziDao().insert(meizi) == -1 ? false : true;
+    Log.i(TAG, &quot;insert Meizi :&quot; + flag + &quot;--&gt;&quot; + meizi.toString());
+    return flag;
+}</code></pre><p> /**
+     * 插入多条数据，在子线程操作<br>     * @param meiziList<br>     * @return<br>     */<br>    public boolean insertMultMeizi(final List<meizi> meiziList) {<br>        boolean flag = false;<br>        try {<br>            mManager.getDaoSession().runInTx(new Runnable() {<br>                @Override<br>                public void run() {<br>                    for (Meizi meizi : meiziList) {<br>                        mManager.getDaoSession().insertOrReplace(meizi);<br>                    }<br>                }<br>            });<br>            flag = true;<br>        } catch (Exception e) {<br>            e.printStackTrace();<br>        }<br>        return flag;<br>    }</meizi></p>
+<pre><code>/**
+ * 修改一条数据
+ * @param meizi
+ * @return
+ */
+public boolean updateMeizi(Meizi meizi){
+    boolean flag = false;
+    try {
+        mManager.getDaoSession().update(meizi);
+        flag = true;
+    }catch (Exception e){
+        e.printStackTrace();
+    }
+    return flag;
+}
+
+/**
+ * 删除单条记录
+ * @param meizi
+ * @return
+ */
+public boolean deleteMeizi(Meizi meizi){
+    boolean flag = false;
+    try {
+        //按照id删除
+        mManager.getDaoSession().delete(meizi);
+        flag = true;
+    }catch (Exception e){
+        e.printStackTrace();
+    }
+    return flag;
+}
+
+/**
+ * 删除所有记录
+ * @return
+ */
+public boolean deleteAll(){
+    boolean flag = false;
+    try {
+        //按照id删除
+        mManager.getDaoSession().deleteAll(Meizi.class);
+        flag = true;
+    }catch (Exception e){
+        e.printStackTrace();
+    }
+    return flag;
+}
+
+/**
+ * 查询所有记录
+ * @return
+ */
+public List&lt;Meizi&gt; queryAllMeizi(){
+    return mManager.getDaoSession().loadAll(Meizi.class);
+}
+
+/**
+ * 根据主键id查询记录
+ * @param key
+ * @return
+ */
+public Meizi queryMeiziById(long key){
+    return mManager.getDaoSession().load(Meizi.class, key);
+}
+
+/**
+ * 使用native sql进行查询操作
+ */
+public List&lt;Meizi&gt; queryMeiziByNativeSql(String sql, String[] conditions){
+    return mManager.getDaoSession().queryRaw(Meizi.class, sql, conditions);
+}
+
+/**
+ * 使用queryBuilder进行查询
+ * @return
+ */
+public List&lt;Meizi&gt; queryMeiziByQueryBuilder(long id){
+    QueryBuilder&lt;Meizi&gt; queryBuilder = mManager.getDaoSession().queryBuilder(Meizi.class);
+    return queryBuilder.where(MeiziDao.Properties._id.eq(id)).list();</code></pre><p>//        return queryBuilder.where(MeiziDao.Properties._id.ge(id)).list();<br>    }<br>}</p>
+<p>注：常用注解<br>       实体@Entity注解<br>• schema：告知GreenDao当前实体属于哪个schema<br>• active：标记一个实体处于活跃状态，活动实体有更新、删除和刷新方法<br>• nameInDb：在数据库中使用的别名，默认使用的是实体的类名<br>• indexes：定义索引，可以跨越多个列<br>• createInDb：标记创建数据库表</p>
+<p>基础属性注解<br>• @Id：主键 Long 型，可以通过@Id(autoincrement = true)设置自增长<br>• @Property：设置一个非默认关系映射所对应的列名，默认是使用字段名，例如：@Property(nameInDb = “name”)<br>• @NotNull：设置数据库表当前列不能为空<br>• @Transient：添加此标记后不会生成数据库表的列</p>
+<p>索引注解<br>• @Index：使用@Index作为一个属性来创建一个索引，通过name设置索引别名，也可以通过unique给索引添加约束<br>• @Unique：向数据库添加了一个唯一的约束</p>
+<p>关系注解<br>• @ToOne：定义与另一个实体（一个实体对象）的关系<br>• @ToMany：定义与多个实体对象的关系</p>
+
             </div>
             <hr>
 
@@ -578,7 +791,7 @@ char--&gt; byte--&gt;short--&gt;int--&gt;long--&gt;float--&gt;double
                     </span>
                     <a href="www.cndsx.xyz" class="b-link-green">千机阁</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                    <a href="/2019/06/26/java的基本数据类型/" class="b-link-green">java的基本数据类型</a>
+                    <a href="/2020/03/25/GreenDao/" class="b-link-green">GreenDao的基本使用</a>
                 </p>
             </div>
         </div>
@@ -860,23 +1073,25 @@ char--&gt; byte--&gt;short--&gt;int--&gt;long--&gt;float--&gt;double
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2019/07/05/风走了八千里/">
+                <a href="/2020/03/25/GreenDao/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="我还是很喜欢你">
+                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="GreenDao的基本使用">
                         
-                        <span class="card-title">我还是很喜欢你</span>
+                        <span class="card-title">GreenDao的基本使用</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary">我还是很喜欢你我还是很喜欢你 像风走了八千里 不问归期我还是很喜欢你 像雨洒落在热带与极地不远万里我还是很喜欢你 像鲸沉于海底温柔呼吸 痴极嗔极我还是很喜欢你 像等了很多年故人的老城门 茕茕孑立我还是很喜欢你 像鲸鱼缺氧于六千四百米的深海 </div>
+                    <div class="summary">###GreenDAO 是一个将对象映射到 SQLite 数据库中的轻量且快速的 ORM 解决方案。
+#1，添加依赖        在根目录中build.gradle添加         classpath ‘com.android.too</div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-07-05
-                        </span>
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-03-25
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-user fa-fw"></i>
@@ -885,11 +1100,12 @@ char--&gt; byte--&gt;short--&gt;int--&gt;long--&gt;float--&gt;double
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/散文/" target="_blank">
-                        <span class="chip bg-color">散文</span>
+                    <a href="/tags/android/" target="_blank">
+                        <span class="chip bg-color">android</span>
                     </a>
                     
                 </div>
@@ -903,25 +1119,21 @@ char--&gt; byte--&gt;short--&gt;int--&gt;long--&gt;float--&gt;double
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2019/06/25/音乐——缘分一道桥/">
+                <a href="/2020/02/28/雪中悍刀行——许瞎子/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="音乐推荐：缘分一道桥">
+                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="鱼鼓营许涌关">
                         
-                        <span class="card-title">音乐推荐：缘分一道桥</span>
+                        <span class="card-title">鱼鼓营许涌关</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary">音乐推荐缘分一道桥难得佳作，铿锵有力。此曲选曲和意境描绘都非常有特色。
-开篇用古诗描绘塞外雄浑，历史壮丽；
-而后就是乱世战争命如草芥，生死无常。
-撇开《长城》的垃圾故事不说，战争描绘和长城风光倒是淋漓尽致，再配合这首歌，
-算是锦上添花了。
-</div>
+                    <div class="summary">鱼鼓营死战第一&#160; &#160;&#160; &#160;徐字王旗下，鱼龙鼓响；&#160; &#160;&#160; &#160;老卒许涌关，死于安详；
+&#160; &#160;&#160; &#160;老许是个瞎子，也爱喝酒，</div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-06-25
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-02-28
                             </span>
                         <span class="publish-author">
                             
@@ -934,8 +1146,8 @@ char--&gt; byte--&gt;short--&gt;int--&gt;long--&gt;float--&gt;double
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/音乐/" target="_blank">
-                        <span class="chip bg-color">音乐</span>
+                    <a href="/tags/江湖/" target="_blank">
+                        <span class="chip bg-color">江湖</span>
                     </a>
                     
                 </div>
